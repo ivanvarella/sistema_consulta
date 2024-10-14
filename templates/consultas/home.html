@@ -1,0 +1,38 @@
+{% extends "consultas/base.html" %}
+
+{% block title %}Home - Sistema de Consultas{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <!-- Título principal -->
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Bem-vindo ao Sistema de Consultas Médicas</h1>
+            <p class="lead">Gerenciamento completo de consultas, pacientes e médicos.</p>
+        </div>
+    </div>
+
+    <!-- Informações sobre o sistema -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header text-center">
+                    Sobre o Sistema
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Controle de Consultas e Pacientes</h5>
+                    <p class="card-text">
+                        Este sistema permite o agendamento e gerenciamento de consultas médicas, além do cadastro e acompanhamento de pacientes e médicos. Através do menu superior, você pode navegar pelas diferentes funcionalidades, como o agendamento de consultas e a visualização de relatórios detalhados.
+                    </p>
+                    <div class="text-center">
+                        <a href="{% url 'agendar_consulta' %}" class="btn btn-primary">Agendar Nova Consulta</a>
+                    </div>
+                </div>
+                <div class="card-footer text-muted text-center">
+                    Sistema atualizado recentemente.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

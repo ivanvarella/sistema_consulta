@@ -1,0 +1,13 @@
+{% extends 'consultas/base.html' %}
+
+{% block content %}
+    <h2>Horários Disponíveis para {{ medico.user.username }} em {{ data|date:"Y-m-d" }}</h2>
+
+    <ul>
+        {% for horario in horarios %}
+            <li>{{ horario|date:"H:i" }}</li>
+        {% empty %}
+            <li>Não há horários disponíveis.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

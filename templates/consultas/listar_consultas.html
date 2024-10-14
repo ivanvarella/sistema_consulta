@@ -1,0 +1,15 @@
+{% extends 'consultas/base.html' %}
+
+{% block content %}
+    <h2>Minhas Consultas</h2>
+    <ul>
+        {% for consulta in consultas %}
+            <li>
+                Consulta com {{ consulta.medico }} em {{ consulta.data_hora|date:"d/m/Y H:i" }}
+                - <a href="#">Detalhes</a>
+            </li>
+        {% empty %}
+            <li>Nenhuma consulta agendada.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

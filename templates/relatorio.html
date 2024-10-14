@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório de Consultas</title>
+</head>
+<body>
+    <h1>Relatório de Consultas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Paciente</th>
+                <th>Médico</th>
+                <th>Data e Hora</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for consulta in consultas %}
+                <tr>
+                    <td>{{ consulta.paciente.nome }}</td>
+                    <td>{{ consulta.medico.nome }}</td>
+                    <td>{{ consulta.data_hora }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

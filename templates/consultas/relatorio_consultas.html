@@ -1,0 +1,16 @@
+{% extends 'consultas/base.html' %}
+
+{% block content %}
+    <h2>Relatório de Consultas</h2>
+    <p>Total de Consultas: {{ total_consultas }}</p>
+    <ul>
+        {% for consulta in consultas %}
+            <li>{{ consulta }} - Observações: {{ consulta.observacoes }}</li>
+        {% empty %}
+            <li>Nenhuma consulta registrada.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'relatorio_consultas_json' %}" class="btn btn-secondary">Gerar Relatório JSON</a>
+    <a href="{% url 'relatorio_pdf' %}" class="btn btn-danger">Gerar Relatório PDF</a>
+{% endblock %}
